@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import tournamentsRouter from './routes/tournaments';
+import playersRouter from './routes/players';
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use('/tournaments', tournamentsRouter);
+app.use('/tournaments', playersRouter);
 
 app.get('/health', (req, res) => {
 	res.status(200).json({

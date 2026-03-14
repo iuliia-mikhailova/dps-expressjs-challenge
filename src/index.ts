@@ -2,6 +2,7 @@ import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import tournamentsRouter from './routes/tournaments';
 import playersRouter from './routes/players';
+import gamesRouter from './routes/games';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use('/tournaments', tournamentsRouter);
 app.use('/tournaments', playersRouter);
+app.use('/tournaments', gamesRouter);
 
 app.get('/health', (req, res) => {
 	res.status(200).json({
